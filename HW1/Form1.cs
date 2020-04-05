@@ -12,8 +12,14 @@ using System.Windows.Forms;
 
 namespace HW1
 {
+    Form2 f = new Form2(this);
+    f.ShowDialog();
+
+    
     public partial class Form1 : Form
     {
+
+
         bool drawing;
         GraphicsPath currentPath;
         Point oldLocation;
@@ -247,6 +253,16 @@ namespace HW1
             dotToolStripMenuItem.Checked= false;
             dashDotDotToolStripMenuItem.Checked = false;
 
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            Form1 main = this.Owner as Form1;
+            if (main !=null)
+            {
+                string s = main.textBox1.Text;
+                main.textBox1.Text = "OK";
+            }
         }
     }
 }
